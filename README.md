@@ -1,5 +1,6 @@
 # Azure playground
 
-Reference points for:
+Sandpit commands and templates for:
 * CLI
 * Powershell
+* Bicep

@@ -1,0 +1,26 @@
+
+    "adminUsername": {
+      "value": "tjadmin"
+    },
+    "publicIpName": {
+      "value": "myPublicIP"
+    },
+    "publicIPAllocationMethod": {
+      "value": "Dynamic"
+    },
+    "publicIpSku": {
+      "value": "Basic"
+    },
+    "OSVersion": {
+      "value": "2022-datacenter-azure-edition-core"
+    },
+    "vmSize": {
+      "value": "Standard_D2s_v5"
+    },
+    "vmName": {
+      "value": "TJVM1"
+    }
+    
+  }
+}
+
