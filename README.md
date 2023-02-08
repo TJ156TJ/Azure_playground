@@ -4,3 +4,4 @@ Sandpit commands and templates for:
 * CLI
 * Powershell
 * Bicep
+* ARM
