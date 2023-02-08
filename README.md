@@ -1,1 +1,5 @@
-# Azure_playground
+# Azure playground
+
+Reference points for:
+* CLI
+* Powershell
