@@ -30,7 +30,7 @@ DeploymentName="addnameparameter-"$today
 az deployment group create \
   --name $DeploymentName \
   --template-file $templateFile \
-  --parameters storageName=tjstoragearmpara2
+  --parameters storageName=tjstoragearmpara3
 ```
 
 ## Outputs
