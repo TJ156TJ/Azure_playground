@@ -20,7 +20,13 @@ New-AzVm
        -Image <image name>
 ```
 
-New-AzVm -ResourceGroupName tjvm -Name tjvm -Credential (Get-Credential) -Location eastus -Image Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest -OpenPorts 22 -PublicIpAddressName tjvm
+## Set
+
+PWSH
+$Env:ARM_CLIENT_ID = "<APPID_VALUE>"
+$Env:ARM_CLIENT_SECRET = "<PASSWORD_VALUE>"
+$Env:ARM_SUBSCRIPTION_ID = "<SUBSCRIPTION_ID>"
+$Env:ARM_TENANT_ID = "<TENANT_VALUE>"
 
 ## outputs
 

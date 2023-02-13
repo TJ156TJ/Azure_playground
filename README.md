@@ -5,3 +5,4 @@ Sandpit commands and templates for:
 * Powershell
 * Bicep
 * ARM
+* Terraform
