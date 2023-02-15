@@ -10,8 +10,13 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'TJ_Sub1(43498770-9565-4b71-bbe5-ba85a11c7827)'
+    appType: 'webApp'
+    WebAppName: 'tjappservice'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
