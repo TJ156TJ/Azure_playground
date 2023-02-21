@@ -9,7 +9,7 @@ variables:
   azureServiceConnection: TJ_Sub1(43498770-9565-4b71-bbe5-ba85a11c7827)
   resourceGroupName: 'exampleRG'
   location: '<your-resource-group-location>'
-  templateFile: BIcep/Templates/Appservice/Main.bicep
+  templateFile: ARM/azuredeploy.json
 pool:
   vmImage: $(vmImageName)
 
