@@ -23,7 +23,7 @@ Deploy ARM template (json file)
 
 ```
 
-templateFile="ARM/azuredeploy.json"
+templateFile=ARM/azuredeploy.json
 today=$(date +"%d-%b-%Y")
 DeploymentName="addnameparameter-"$today
 
