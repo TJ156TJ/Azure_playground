@@ -1,24 +1,26 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
-- main
+- master
 
+name: Deploy Bicep files
+
+variables:
+  vmImageName: 'ubuntu-latest'
+
+  azureServiceConnection: '<your-connection-name>'
+  resourceGroupName: 'exampleRG'
+  location: '<your-resource-group-location>'
+  templateFile: BIcep/Templates/Appservice/Main.bicep
 pool:
-  vmImage: ubuntu-latest
+  vmImage: $(vmImageName)
 
 steps:
-- task: AzureRmWebAppDeployment@4
+- task: AzureCLI@2
   inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'TJ_Sub1(43498770-9565-4b71-bbe5-ba85a11c7827)'
-    appType: 'webApp'
-    WebAppName: 'tjappservice'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    azureSubscription: $(azureServiceConnection)
+    scriptType: bash
+    scriptLocation: inlineScript
+    useGlobalConfig: false
+    inlineScript: |
+      az --version
+      az group create --name $(resourceGroupName) --location $(location)
+      az deployment group create --resource-group $(resourceGroupName) --template-file $(templateFile)
